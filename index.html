@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Scheduling Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <h2>Process Scheduling Calculator</h2>
+
+    <div class="container">
+        <label>Algorithm:</label>
+        <select id="algorithm">
+            <option value="fcfs">FCFS</option>
+            <option value="sjf-np">SJF (Non-Preemptive)</option>
+            <option value="sjf-p">SJF (Preemptive)</option>
+            <option value="priority">Priority Scheduling</option>
+            <option value="round-robin">Round Robin</option>
+        </select>
+
+        <label>Time Quantum (for RR):</label>
+        <input type="number" id="timeQuantum" min="1" value="2">
+
+        <h3>Add Process</h3>
+        <input type="text" id="pid" placeholder="Process ID">
+        <input type="number" id="arrival" placeholder="Arrival Time" min="0">
+        <input type="number" id="burst" placeholder="Burst Time" min="1">
+        <input type="number" id="priority" placeholder="Priority (if applicable)" min="1">
+        <button onclick="addProcess()">Add Process</button>
+
+        <h3>Process Table</h3>
+        <table id="processTable">
+            <thead>
+                <tr>
+                    <th>Process ID</th>
+                    <th>Arrival Time</th>
+                    <th>Burst Time</th>
+                    <th>Priority</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <button onclick="calculateSchedule()">Calculate</button>
+    </div>
+
+    <h3>Results</h3>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Process ID</th>
+                <th>Waiting Time</th>
+                <th>Turnaround Time</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Gantt Chart</h3>
+    <div id="ganttChart"></div>
+
+</body>
+</html>
