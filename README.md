@@ -18,8 +18,6 @@ The **Process Scheduling Calculator** is a web-based application that helps user
 - **CSS** for styling (gradient background, styled tables, buttons, and effects)
 - **JavaScript** for dynamic interactions and algorithm implementations
 
-## Screenshots
-(Add screenshots here)
 
 ## Installation & Setup
 No installation is required. Simply open the `index.html` file in a web browser.
